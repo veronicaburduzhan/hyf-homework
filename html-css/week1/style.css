@@ -1,0 +1,132 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    margin: 0 auto;
+    width: 900px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    background-color: #707070; 
+    box-shadow: 0px 0px 10px #111111; 
+}
+
+h1 {
+    font-size: 40px;
+    margin: 0 0 5px 0;
+    color: #e8b8c4;
+}
+
+h2 {
+    font-size: 18px;
+    font-style: normal; 
+    margin: 0 0 20px 0;
+    letter-spacing: 0.05em;
+}
+
+h3 {
+    font-size: 18px;
+    font-style: normal; 
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+p {
+    margin: 0 0 10px 0;
+}
+
+
+/* Styles for grid elements */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: white;
+}
+
+.pink-box {
+    background-color: #e8b8c4;
+    color: white;
+}
+
+.grey-box {
+    background-color: #464646;
+    color: white;
+}
+
+
+/* Styles for header */
+
+header {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    display: flex;
+    margin-bottom: -5px;
+}
+
+.line {
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    margin: 10px 0 30px 0;
+
+}
+
+#contact-info {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;    
+    justify-content: center; 
+}
+
+#contact-info img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* Styles for resume information */
+
+.resume-info {
+    padding: 40px;
+}
+
+.life-step {
+    margin: 30px 0 30px 0;
+}
+
+.light-text {
+    font-weight: 100;
+    font-style: italic;
+}
+
+ul li {
+    list-style: none;
+    line-height: 1.6;
+}
+
+ul a {
+    text-decoration: none;
+    color: #e8b8c4;
+}
+
+ul a:hover {
+    color: white;
+}
+
+#hyf-list img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+#hyf-list li {
+    margin: 0 0 5px 0;
+}
+
+#hyf-list img:hover {
+    filter: brightness(200%);
+}
