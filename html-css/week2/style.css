@@ -27,13 +27,13 @@ h3 {
     margin-top: 0;
 }
 
-ul {
+ul { /* removes indention */
     margin: 0;
     padding: 0;
 }
 
 p {
-    color: #6E6D6D;
+    color: #6E6D6D; /* changes text color */
     margin: 0;
 }
 
@@ -42,12 +42,15 @@ p {
 header {
     display: flex;
     flex-direction: column;
-    background-color: #fafafa; 
+    background-color: #fafafa; /* special color for header */
+}
+
+.page-title, .header-nav ul, section, .footer-wrapper {
+    width: 80%; /* makes layout narrower besides main image */
 }
 
 .page-title {
     margin: 50px auto;
-    width: 80%;
 }
 
 .page-title p {
@@ -56,14 +59,13 @@ header {
 }
 
 .header-nav {
-    padding: 30px 0 30px 0;
+    padding: 30px 0;
     box-shadow: 0px 0px 2px lightgray; 
-    background-color: white;
+    background-color: white; 
     margin: 0;
 }
 
 .header-nav ul {
-    width: 80%;
     margin: 0 auto;
 }
 
@@ -79,10 +81,10 @@ header {
 .header-nav a {
     text-decoration: none;
     color: black;
-    transition: all 0.5s linear;
+    transition: all 0.5s linear; /* effect of smooth changing links color on hover over */
 }
 
-.header-nav a:hover {
+.header-nav a:hover { /* changes color on hover over */
     color: grey;
 }
 
@@ -96,17 +98,17 @@ main {
 }
 
 #about-main-img {
-    width: 100vw;
+    width: 100vw; /* makes image being responsive and filling all width of screen */
 }
 
 section {
     display: flex;
     flex-direction: row;
-    width: 80%;
     gap: 90px;
     margin: 0px auto;
 }
 
+/* relative width amount for 2 columns in one section */
 .general-topic {
     width: 35%;
 }
@@ -123,7 +125,7 @@ section {
     font-size: 18px;
 }
 
-.logotypes-topic {
+.logotypes-topic { /* style for container with logos*/
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -132,8 +134,7 @@ section {
 }
 
 .logotypes-topic img {
-    width: 100px;
-    flex: 1 0 auto;
+    flex: 1 0 auto; /* style for logo images flex-grow 1, no shrink, flex-basis depends of available space amount */
 }
 
 /* FOOTER */
@@ -155,7 +156,6 @@ footer p, a {
 }
 
 .footer-wrapper {
-    width: 80%;
     display: flex;
     flex-direction: row;
     margin: 0 auto;
@@ -166,10 +166,11 @@ footer p, a {
 
 .footer-block {
     flex-grow: 1;
-    flex-basis: 0;
+    flex-basis: 0; /* all containers have equal width */
     line-height: 1.5;
 }
 
+/* styles for iframe to get custom sizes */
 .map-container {
     margin-bottom: 10px;
     position: relative;
@@ -178,9 +179,7 @@ footer p, a {
     padding-top: 133%; /* 3:4 aspect Ratio (divide 4 by 3 = 1.33)*/
 }
 
-/* Style the iframe to fit in the container with full height and width */
-
-#location-map {
+#location-map { /* styles the iframe to fit in the container with full height and width */
     position: absolute;
     top: 0;
     left: 0;
@@ -191,18 +190,18 @@ footer p, a {
 }
 
 address {
-    font-style: normal;
+    font-style: normal; /* removes italic */
 }
 
 .list-custom-style li {
     list-style: none;
     text-decoration: none;
-    border-top: 2px solid #7249c1;
+    border-top: 2px solid #7249c1; /* adds lines between links */
     padding: 20px 0;
-    transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; /* effect of smooth moving to the right on hover over */
 }
 
-.list-custom-style li:first-child {
+.list-custom-style li:first-child { /* removes line for the first link like on the layout */
     border-top: none;
     padding-top: 0px;
 }
@@ -211,8 +210,8 @@ address {
     text-decoration: none;
 }
 
-.list-custom-style li:hover {
-    margin-left: 20px;
+.list-custom-style li:hover { /* moves links with border to the right on hover over */
+    margin-left: 20px; 
 }
 
 
@@ -220,12 +219,12 @@ address {
 
 /* for mobile screens */
 @media all and (max-width: 600px) {
-    h2, h3 {
+    h2, h3 { 
         font-size: 25px; 
         margin-bottom: 18px;
     }    
     
-    .header-nav ul {
+    .header-nav ul { /* column style for navigation panel on mobile screen */
         display: flex;
         flex-direction: column;
         font-weight: 700;
@@ -240,17 +239,16 @@ address {
        gap: 40px;
     }
 
-    section {
+    section { /* makes one column for main content */
         display: flex;
         flex-direction: column;
         gap: 40px;
     }
 
-    /* Colunm position changing for mobile screens (mobile layout) */
-    section:nth-child(2) {
+    section:nth-child(2) { /* colunm position changing for mobile screens (mobile layout) */
         flex-direction: column-reverse;
     }
-
+    /* changes width of containers to make each of them fill all the horizontal space */
     .general-topic {
         width: 100%;
     }
@@ -263,17 +261,17 @@ address {
         font-size: 18px;
     }
 
-    .logotypes-topic img {
+    .logotypes-topic img { /* makes logo images create 2 column */
         flex-basis: 40%;
     }
 
-    .footer-wrapper {
+    .footer-wrapper { /* column style for footer on mobile screen */
         display: flex;
         flex-direction: column;
         gap: 40px;
     }
     
-    /* Backup to initial styles*/
+    /* backup to initial styles of iframe with map */
     .map-container {
         all: initial;
     }
@@ -282,7 +280,7 @@ address {
         all: initial;
     }
     
-    /* Backup to initial styles for IE and Opera Mini */
+    /* backup to initial styles for IE and Opera Mini */
     .map-container {
         position: static;
         overflow: visible;
@@ -299,40 +297,60 @@ address {
 }
 
 /* for tablet screens */
-@media all and (min-width: 601px) and (max-width: 1200px) {
-    .footer-wrapper {
+@media all and (min-width: 601px) and (max-width: 800px) {
+    main {
+        gap: 40px;
+    }
+ 
+    section { /* makes one column for main content */
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        gap: 40px;
+    }
+ 
+    section:nth-child(2) { /* colunm position changing for mobile screens (mobile layout) */
+        flex-direction: column-reverse;
+    }
+     /* changes width of containers to make each of them fill all the horizontal space */
+    .general-topic {
+        width: 100%;
+    }
+     
+    .specific-topic {
+        width: 100%;
+    }
+ 
+    .general-topic p {
+        font-size: 18px;
+    }
+    
+    .footer-wrapper { 
         gap: 40px;
     }
 
-    .footer-block {
+    .footer-block { /* creates two equal columns */
         flex-basis: 45%;
-      }
+    }
 }
-/* */
-@media all and (min-width: 800px) {
-    /* Backup to initial styles*/
-    .map-container {
-        all: initial;
-    }
-    
-    #location-map {
-        all: initial;
-    }
-    
-    /* Backup to initial styles for IE and Opera Mini */
-    .map-container {
-        position: static;
-        overflow: visible;
-        width: auto;
-        padding-top: 0; 
-    }
-    
-    #location-map {
-        position: static;
-        width: auto;
-        height: auto;
+
+/* special style for footer and map for large tablet screens */
+@media all and (min-width: 801px) and (max-width: 1150px) {
+    .footer-wrapper { 
+        gap: 40px;
     }
 
+    .footer-block { /* creates two equal columns */
+        flex-basis: 45%;
+    }
+
+    .map-container {
+        padding-top: 100%; /* 1:1 aspect Ratio (height and width are equal)*/
+    }
+}
+
+/* special style for container with logo images for very large screens */
+@media all and (min-width: 1450px) {
+    .logotypes-topic img {
+        width: 10%; /* creates two rows */
+    }
 }
