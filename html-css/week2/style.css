@@ -42,7 +42,7 @@ p {
 header {
     display: flex;
     flex-direction: column;
-    background-color: #F6F6F6; 
+    background-color: #fafafa; 
 }
 
 .page-title {
@@ -57,7 +57,7 @@ header {
 
 .header-nav {
     padding: 30px 0 30px 0;
-    box-shadow: 0px 0px 3px lightgray; 
+    box-shadow: 0px 0px 2px lightgray; 
     background-color: white;
     margin: 0;
 }
@@ -310,7 +310,7 @@ address {
         flex-basis: 45%;
       }
 }
-
+/* */
 @media all and (min-width: 800px) {
     /* Backup to initial styles*/
     .map-container {
