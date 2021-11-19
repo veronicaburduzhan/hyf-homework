@@ -133,8 +133,12 @@ section {
     justify-content: space-between;
 }
 
-.logotypes-topic img {
-    flex: 1 0 auto; /* style for logo images flex-grow 1, no shrink, flex-basis depends of available space amount */
+.img-link {
+    flex-basis: 15%; /* creates 4 rows with logo images and allows them to be responsive */
+}
+
+.img-link img {
+    width: 100%; /* makes images responsive within its containers */
 }
 
 /* FOOTER */
@@ -261,7 +265,7 @@ address {
         font-size: 18px;
     }
 
-    .logotypes-topic img { /* makes logo images create 2 column */
+    .img-link { /* creates 2 column with logo images */
         flex-basis: 40%;
     }
 
@@ -297,7 +301,7 @@ address {
 }
 
 /* for tablet screens */
-@media all and (min-width: 601px) and (max-width: 800px) {
+@media all and (min-width: 601px) and (max-width: 835px) {
     main {
         gap: 40px;
     }
@@ -323,6 +327,10 @@ address {
     .general-topic p {
         font-size: 18px;
     }
+
+    .img-link { /* creates 3 column with logo images */
+        flex-basis: 26%;
+    }
     
     .footer-wrapper { 
         gap: 40px;
@@ -334,7 +342,7 @@ address {
 }
 
 /* special style for footer and map for large tablet screens */
-@media all and (min-width: 801px) and (max-width: 1150px) {
+@media all and (min-width: 836px) and (max-width: 1150px) {
     .footer-wrapper { 
         gap: 40px;
     }
@@ -350,7 +358,7 @@ address {
 
 /* special style for container with logo images for very large screens */
 @media all and (min-width: 1450px) {
-    .logotypes-topic img {
-        width: 10%; /* creates two rows */
+    .img-link {
+        flex-basis: 10%; /* creates 2 rows with logo images */
     }
 }
