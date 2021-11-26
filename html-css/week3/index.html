@@ -81,7 +81,7 @@
                         </div>
                         <div class="input-field"> <!-- Allows postcode to have only 4 numbers -->
                             <label for="postcode">Post code*</label>
-                            <input type="number" name="postcode" id="postcode" maxlength="4"
+                            <input type="number" name="postcode" id="postcode" pattern="^[0-9]{4}$"
                                 title="Please, enter a valid postal code with 4 numbers." required>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                                 </div>
                                 <div class="input-field"> <!-- Allows postcode to have only 4 numbers -->
                                     <label for="postcode-shipping">Post code*</label>
-                                    <input type="number" name="postcode-to-ship" id="postcode-shipping" maxlength="4"
+                                    <input type="number" name="postcode-to-ship" id="postcode-shipping" pattern="^[0-9]{4}$"
                                         title="Please, enter a valid postal code with 4 numbers.">
                                 </div>
                             </div>
