@@ -43,7 +43,7 @@
                     </div>
                 </div>
                <!-- Form for customer's personal info and shipping address -->
-                <form class="order-form" id="order" action="https://htmlpreview.github.io/?https://github.com/veronicaburduzhan/hyf-homework/blob/master/html-css/week3/step2.html" method="post">
+                <form class="order-form" id="order" action="https://htmlpreview.github.io/?https://github.com/veronicaburduzhan/hyf-homework/blob/master/html-css/week3/step2.html" method="get">
                     <p class="input-title">Nice to meet you. Let's spend a minute to get to know each other? Please
                         enter the
                         following:
@@ -79,9 +79,9 @@
                             <label for="address">Street address*</label>
                             <input type="text" name="address" id="address" required>
                         </div>
-                        <div class="input-field"> <!-- Pattern for postcode to have only 4 numbers -->
+                        <div class="input-field"> <!-- Allows postcode to have only 4 numbers -->
                             <label for="postcode">Post code*</label>
-                            <input type="number" name="postcode" id="postcode" pattern="^[0-9]{4}$"
+                            <input type="number" name="postcode" id="postcode" max="4"
                                 title="Please, enter a valid postal code with 4 numbers." required>
                         </div>
                     </div>
@@ -111,19 +111,19 @@
 
                             <div class="multi-input">
                                 <div class="input-field">
-                                    <label for="fname">First name*</label>
-                                    <input type="text" name="fname" id="fname">
+                                    <label for="fname-shipping">First name*</label>
+                                    <input type="text" name="fname-to-ship" id="fname-shipping">
                                 </div>
                                 <div class="input-field">
-                                    <label for="lname">Last name*</label>
-                                    <input type="text" name="lname" id="lname">
+                                    <label for="lname-shipping">Last name*</label>
+                                    <input type="text" name="lname-to-ship" id="lname-shipping">
                                 </div>
                             </div>
 
                             <div class="multi-input">
                                 <div class="input-field">
-                                    <label for="country-ship">Country*</label>
-                                    <select name="country-ship" id="country-ship">
+                                    <label for="country-ship-shipping">Country*</label>
+                                    <select name="country-ship-to-ship" id="country-ship-shipping">
                                         <option value="">Select</option>
                                         <option value="denmark">Denmark</option>
                                         <option value="faroe-island">Faroe Island</option>
@@ -137,12 +137,12 @@
 
                             <div class="multi-input">
                                 <div class="input-field">
-                                    <label for="address">Street address*</label>
-                                    <input type="text" name="address" id="address">
+                                    <label for="address-shipping">Street address*</label>
+                                    <input type="text" name="address-to-ship" id="address-shipping">
                                 </div>
-                                <div class="input-field"><!-- Pattern for postcode to have only 4 numbers -->
-                                    <label for="postcode">Post code*</label>
-                                    <input type="number" name="postcode" id="postcode" pattern="^[0-9]{4}$"
+                                <div class="input-field"> <!-- Allows postcode to have only 4 numbers -->
+                                    <label for="postcode-shipping">Post code*</label>
+                                    <input type="number" name="postcode-to-ship" id="postcode-shipping" max="4"
                                         title="Please, enter a valid postal code with 4 numbers.">
                                 </div>
                             </div>
@@ -151,7 +151,7 @@
                     <!-- Next/Back buttons -->
                     <footer>
                         <div class="btn-section">
-                            <button class="btn" type="submit">NEXT</button>
+                            <button class="btn" type="submit" form="order">NEXT</button>
                         </div>
                     </footer>
                 </form>
