@@ -1,0 +1,332 @@
+/* GENERAL */
+body {
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: #3d3d3d;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+ul { /* removes indention */
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 1em 0;
+}
+
+h1 {
+    margin: 2.75em 0 1.5em 0;
+    font-size: 2.5em;
+}
+
+label {
+    font-weight: 700;
+    width: 8em;
+    text-align: end;
+}
+
+.wrapper { /* defines content area */
+    max-width: 900px;
+    margin: 6.25em auto;
+    box-shadow: 0 0 2.5em lightgray;
+    border-radius: 10px;
+    padding: 2.5em;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+#logo-img, #nav-tab {
+    background-color: #9D84B7;
+    padding: 20px 30px;
+    color: white;
+}
+
+#general-info {
+    margin-bottom: 3.125em;
+    width: 75%;
+}
+
+.title {
+    margin: 1em 0 0 0;
+}
+
+
+/* PROGRESS BAR STYLES */
+
+.progress-bar { /* empty progress bar */
+    background-color: lightgrey;
+    border-radius: 10px;
+    height: 1em;   
+}
+
+@keyframes progress-1 {
+    from {width: 0%;}
+    to {width: 25%;}
+}
+
+.progress-fill-1 { /* 25% full */
+    background-color: #9D84B7;
+    border-radius: 10px;
+    height: 1em;
+    animation-name: progress-1; /* animation for filling progress bar with its keyframes rule below */
+    animation-duration: 1s;  
+    animation-fill-mode: forwards;
+}
+
+@keyframes progress-2 {
+    from {width: 25%;}
+    to {width: 50%;}
+}
+
+.progress-fill-2 { /*50% full */
+    background-color: #9D84B7;
+    border-radius: 10px;
+    height: 1em;
+    animation-name: progress-2; /* animation for filling progress bar with its keyframes rule below */
+    animation-duration: 1s;  
+    animation-fill-mode: forwards;
+}
+
+@keyframes progress-3 {
+    from {width: 50%;}
+    to {width: 75%;}
+}
+
+.progress-fill-3 { /* 75% full */
+    background-color: #9D84B7;
+    border-radius: 10px;
+    height: 1em;
+    animation-name: progress-3; /* animation for filling progress bar with its keyframes rule below */
+    animation-duration: 1s;  
+    animation-fill-mode: forwards;
+}
+
+/* STYLES FOR INPUTS */
+
+input,
+select {
+    height: 3em;
+    padding: 5px 8px;
+    width: 16em;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+/* EXTRA GENERAL STYLES FOR ALL PAGES */
+
+.input-title {
+    margin-top: 3em;
+}
+
+.multi-input { /* container for container with few inputs */
+    display: flex;
+    margin: 1.5em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input-field { /* container for input with its label */
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+/* STYLES FOR TEXTAREA INPUT */ 
+
+.input-textarea { 
+    display: flex;
+    gap: 1.5em;
+    flex-basis: 100%;
+}
+
+.text-field-title {
+    box-sizing: border-box;
+    width: 8em;
+}
+
+.text-field-title p {
+    font-size: 0.75em;
+}
+
+.text-field { 
+    flex: 1 0 auto;
+}
+
+
+/*.input-narrow input {
+    width: 2.5em;
+}*/
+
+.extra-input { /* container for Shipping address checkbox and extra inputs for another shipping address */
+    margin: 1.5em;
+}
+
+.extra-input input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+.shipping-address {
+    margin-top: 3em;
+}
+
+input:checked ~ .shipping-address { /* condition that displays extra inputs for another shipping address */
+    display: none;
+}
+
+footer { /* footer area for buttons */
+    margin-top: 4em;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2em;
+}
+
+
+/* NEXT/BACK BUTTON STYLES */
+
+.next-btn {
+    display: flex;
+    background: #9D84B7;
+    padding: 1em;
+    width: 6em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.4s linear;
+}
+
+.next-btn a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    
+}
+
+.next-btn:hover {
+    box-shadow: 0 0 1em gray;
+    padding: 1.2em;
+}
+
+/* STYLES FOR CONTAINER WITH IMAGES (STEP 3 PAGE) */
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.item-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    gap: 1.5em;
+}
+
+.item-block {
+    flex: 1 0 20%;
+}
+
+.item-block img {
+    width: 100%;
+}
+
+.item-select {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 1em;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 890px) {
+    body {
+        font-size: 15px;
+    }
+
+    #general-info {
+        width: 100%;
+    }
+
+    input,
+    select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    label {
+        font-weight: 700;
+        text-align: start;
+        box-sizing: border-box;
+    }
+
+    .multi-input {
+        margin: 0 3em 0 0;
+        flex-direction: column;
+    }
+
+    .input-field {
+        margin-bottom: 1.5em;
+    }
+
+    .text-field-title {
+        box-sizing: border-box;
+    }
+
+    .item-block {
+        flex: 1 0 40%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .input-field {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5em;
+    }
+
+    .input-inline {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .input-textarea {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .text-field-title {
+        width: 100%;
+    }
+
+    .text-field-title p {
+        margin-bottom: 0em;
+    }
+}

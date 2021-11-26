@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>Homework Week 2</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav> <!-- Navigation and logo -->
+                <div id="logo-img">
+                    <p>Logo</p>
+                </div>
+                <div id="nav-tab">
+                    <p>Navigation</p>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="general-info"> <!-- General info about the form purpose -->
+                <h1>Signup for yourcustomtailor.com</h1>
+                <p>We can't wait to help you improve your life-style and gain the attention from people around you!</p>
+                <p>Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy picking the
+                    best
+                    offers that match your preferences and style. Every week we will send you a hand-picked selection -
+                    we
+                    just need to know a fewdetails about you first...</p>
+            </section>
+            <section id="main-content"> 
+                <div class="title"> <!-- Title of the form part and progress bar -->
+                    <h2>Step 1/4 - tell us who you are?</h2> 
+                    <div class="progress-bar">
+                        <div class="progress-fill-1"></div>
+                    </div>
+                </div>
+               <!-- Form for customer's personal info and shipping address -->
+                <form class="order-form" action="https://bit.ly/3cNSV1t" method="post">
+                    <p class="input-title">Nice to meet you. Let's spend a minute to get to know each other? Please
+                        enter the
+                        following:
+                    </p>
+                    <div class="multi-input">
+                        <div class="input-field">
+                            <label for="fname">First name*</label>
+                            <input type="text" name="fname" id="fname" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="lname">Last name*</label>
+                            <input type="text" name="lname" id="lname" required>
+                        </div>
+                    </div>
+
+                    <div class="multi-input">
+                        <div class="input-field">
+                            <label for="country-ship">Country*</label>
+                            <select name="country-ship" id="country-ship" required>
+                                <option value="">Select</option>
+                                <option value="denmark">Denmark</option>
+                                <option value="faroe-island">Faroe Island</option>
+                                <option value="finland">Finland</option>
+                                <option value="iceland">Iceland</option>
+                                <option value="norway">Norway</option>
+                                <option value="sweden">Sweden</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="multi-input">
+                        <div class="input-field">
+                            <label for="address">Street address*</label>
+                            <input type="text" name="address" id="address" required>
+                        </div>
+                        <div class="input-field"> <!-- Pattern for postcode to have only 4 numbers -->
+                            <label for="postcode">Post code*</label>
+                            <input type="number" name="postcode" id="postcode" pattern="^[0-9]{4}$"
+                                title="Please, enter a valid postal code with 4 numbers." required>
+                        </div>
+                    </div>
+
+                    <div class="multi-input">
+                        <div class="input-textarea">
+                            <div class="text-field-title">
+                                <label for="text-field">Profile description</label>
+                                <p><em>Please provide a short description of yourself to be displayed on our social
+                                        community
+                                        pages.
+                                    </em></p>
+                            </div>
+                            <div class="text-field">
+                                <textarea id="text-field" maxlength="500"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="input-title">Use the same address for billing and shipping? Uncheck below to fill out a
+                        separate
+                        shipping
+                        address.</p>
+                    <div class="extra-input"> <!-- Section with extra shipping information -->
+                        <label for="shipping">Shipping address</label> <!-- Chechbox that displays extra inputs -->
+                        <input type="checkbox" name="shipping-billing-same" value="yes" id="shipping" checked>
+                        <div class="shipping-address">
+
+                            <div class="multi-input">
+                                <div class="input-field">
+                                    <label for="fname">First name*</label>
+                                    <input type="text" name="fname" id="fname" required>
+                                </div>
+                                <div class="input-field">
+                                    <label for="lname">Last name*</label>
+                                    <input type="text" name="lname" id="lname" required>
+                                </div>
+                            </div>
+
+                            <div class="multi-input">
+                                <div class="input-field">
+                                    <label for="country-ship">Country*</label>
+                                    <select name="country-ship" id="country-ship" required>
+                                        <option value="">Select</option>
+                                        <option value="denmark">Denmark</option>
+                                        <option value="faroe-island">Faroe Island</option>
+                                        <option value="finland">Finland</option>
+                                        <option value="iceland">Iceland</option>
+                                        <option value="norway">Norway</option>
+                                        <option value="sweden">Sweden</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="multi-input">
+                                <div class="input-field">
+                                    <label for="address">Street address*</label>
+                                    <input type="text" name="address" id="address" required>
+                                </div>
+                                <div class="input-field"><!-- Pattern for postcode to have only 4 numbers -->
+                                    <label for="postcode">Post code*</label>
+                                    <input type="number" name="postcode" id="postcode" pattern="^[0-9]{4}$"
+                                        title="Please, enter a valid postal code with 4 numbers." required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Next/Back buttons -->
+                    <footer>
+                        <div class="next-btn">
+                            <a href="https://bit.ly/3cNSV1t">Next</a>
+                        </div>
+                    </footer>
+                </form>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>
