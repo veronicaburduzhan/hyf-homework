@@ -1,2 +1,3 @@
 some text inside the file
 more text 
+much more text
