@@ -2021,31 +2021,73 @@ function getMoviesByDirector(directorName) {
 }
 console.log(getMoviesByDirector("Christopher Nolan"));
 
-
-function getAverageRating(averageScore) {
-    let sum = 0;
-    for (let i = 0; i < averageScore.length; i++) {
-        sum += averageScore[i].score;
-    }
-    const averageMovieScore = sum / averageScore.length;
-    return averageMovieScore;
+function getAverageRating(arrayToExplore) {
+  let sum = 0;
+  for (let i = 0; i < arrayToExplore.length; i++) {
+    sum += arrayToExplore[i].score;
+  }
+  const averageMovieScore = sum / arrayToExplore.length;
+  return averageMovieScore.toFixed(2);
 }
-console.log(getAverageRating(movies))
+console.log(getAverageRating(movies));
 
-function getAverageRatingByDirectors(objForExamine) {
-    const directorsAverageRating = {}
-    const directorsScoreAll = []
-    let directorsScore = 0
+function getMoviesScoreByDirector(directorName) {
+  const directorsMoviesScore = [];
+  for (i = 0; i < movies.length; i++) {
+    if (movies[i].director === directorName) {
+      directorsMoviesScore.push(movies[i].score);
+    }
+  }
+  return directorsMoviesScore;
+}
+
+function toKebab(string) {
+  return string
+    .split("")
+    .map((letter, index) => {
+      if (/[A-Z]/.test(letter)) {
+        return ` ${letter.toLowerCase()}`;
+      }
+      return letter;
+    })
+    .join("")
+    .trim();
+}
+
+function toCamel(string) {
+  return toKebab(string)
+    .split("-")
+    .map((word, index) => {
+      if (index === 0) return word;
+      return word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join("");
+}
+
+function getAverageRatingByDirectors(arrayToExplore) {
+  const directorsAverageRating = {};
+  const averageRating = [];
+  for (let i = 0; i < directors.length; i++) {
+    let moviesTotal = getMoviesScoreByDirector(directors[i]);
     let sum = 0;
-    for (let i = 0; i < directors.length; i++) {
-        if (movies[i].director === directorName) {
-            sum += movies[i].score;
-            
+    for (let i = 0; i < moviesTotal.length; i++) {
+      sum += moviesTotal[i];
     }
-       } 
+    let averageMovieScoreByDirector = sum / moviesTotal.length;
+    averageRating.push(averageMovieScoreByDirector.toFixed(2));
+  }
+ 
+  directors.forEach(
+    (director, i) => (directorsAverageRating[director] = averageRating[i])
+  );
+  console.log(directorsAverageRating);
+  
+  let maxRating = Math.max(...Object.values(directorsAverageRating));
+  const maxRatingDirector = Object.keys(directorsAverageRating).filter(
+    (key) => directorsAverageRating[key] === maxRating
+  );
+  console.log(maxRatingDirector);
+}
 
-    }
-
-
-console.log(getAverageRatingByDirectors(movies))
+getAverageRatingByDirectors(movies);
 
