@@ -1,5 +1,6 @@
 function formatCreditCardNumber(num) {
   let formattedNum;
+  let regex = /^\d{4}-\d{4}-\d{4}$/;
   if (typeof num !== "number") {
     return "This is not a number. Please, enter valid card number.";
   } else {
@@ -21,7 +22,7 @@ validCardFormat = {
   americanexpress: /^3[47][0-9]{13}$/,
 };
 
-function getCardInfo(cardNum) {
+/* function getCardInfo(cardNum) {
   let cardNumber = cardNum.split(" ").join("");
   for (let cardType in validCardFormat) {
     if (validCardFormat[cardType].test(cardNumber)) {
@@ -29,6 +30,6 @@ function getCardInfo(cardNum) {
     }
   }
   return "Doesn't match any valid format!";
-}
+}*/
 
 console.log(getCardInfo(4781321334789876));
