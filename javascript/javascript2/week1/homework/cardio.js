@@ -15,7 +15,7 @@ const danishWords = ["bil", "plante", "kaffe", "bog", "ø", "planetarium"];
 findShortestWord(danishWords); // returns 'ø'
 
 //FIND AND COUNT THE DANISH LETTERS
-function findAndCountDanishLetters(arr) {
+/* function findAndCountDanishLetters(arr) {
   const arrSplit = arr.split("");
   const danishletterAE = arrSplit.filter((i) => i === "æ").length;
   const danishletterOE = arrSplit.filter((i) => i === "ø").length;
@@ -33,11 +33,31 @@ function findAndCountDanishLetters(arr) {
   if (danishletterAA > 0) {
     danishLetters["å"] = danishletterAA;
   }
-  console.log(danishLetters);
-}
+  return danishLetters;
+} */
 
+function findAndCountDanishLetters(inputString) {
+  const characterArray = inputString.split("");
+  const danishCharacterArray = ["æ", "ø", "å"];
+  const danishLetters = {};
+  let total = 0;
+  for (let i = 0; i < characterArray.length; i++) {
+    const currentChar = characterArray[i];
+    if (danishCharacterArray.includes(currentChar)) {
+      total += 1;
+      // Add the character to danishLetters or count it up if it's there
+      if (currentChar in danishLetters) {
+        danishLetters[currentChar] += 1;
+      } else {
+        danishLetters[currentChar] = 1;
+      }
+    }
+  }
+  danishLetters["total"] = total;
+  return danishLetters;
+}
 const danishString = "Jeg har en blå bil";
-findAndCountDanishLetters(danishString); // returns {total: 1, å: 1}
+console.log(findAndCountDanishLetters(danishString)); // returns {total: 1, å: 1}
 
 const danishString2 = "Blå grød med røde bær";
-findAndCountDanishLetters(danishString2); // returns {total: 4, æ: 1, ø: 2, å: 1}
+console.log(findAndCountDanishLetters(danishString2)); // returns {total: 4, æ: 1, ø: 2, å: 1}
