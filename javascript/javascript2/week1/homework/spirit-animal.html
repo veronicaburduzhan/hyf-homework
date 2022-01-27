@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Spirit Animal Name Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="spirit-animal.css" />
+  </head>
+  <body>
+    <main>
+      <h1>WHAT IS YOUR SPIRIT ANIMAL?</h1>
+      <div class="box">
+        <section class="wrapper">
+          <p>Choose how you want to find out your spirit animal:</p>
+          <div class="radio-style">
+            <label for="byclick">
+              <input
+                type="radio"
+                id="byclick"
+                name="show-spirit-animal"
+                checked
+              />
+              By clicking the button</label
+            >
+            <label for="byhoverover">
+              <input
+                type="radio"
+                id="byhoverover"
+                name="show-spirit-animal"
+              />
+              By hover over input text</label
+            >
+          </div>
+
+          <input type="text" id="username" placeholder="Your name"/>
+          <button id="mybutton">Get your spirit animal</button>
+          
+        </section>
+      </div>
+       <p id="answer"></p>
+    </main>
+    <script src="spirit-animal.js"></script>
+  </body>
+</html>

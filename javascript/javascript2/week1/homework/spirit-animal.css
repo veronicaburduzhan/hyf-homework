@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  color: #1E212D;
+}
+
+main {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  color: #cbaf87;
+  margin-bottom: 50px;
+}
+
+.box {
+  background-color: #faf3e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px lightgray;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.radio-style {
+  display: flex;
+  flex-direction: row;
+}
+
+.radio-style label {
+    margin: 15px;
+}
+
+#username {
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin: 20px;
+  width: 300px;
+  height: 25px;
+  padding: 5px 8px;
+}
+
+#mybutton {
+  border-radius: 5px;
+  border: 0px;
+  padding: 10px 25px;
+  background-color: #cbaf87;
+  color: white;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#mybutton:hover {
+    box-shadow: 0px 0px 5px lightgray;
+    background-color: white;
+    color: #cbaf87;
+}
+
+#answer {
+    color: #cbaf87;
+    font-size: 25px;
+    font-weight: 500;
+}
