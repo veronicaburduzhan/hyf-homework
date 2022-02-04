@@ -1,0 +1,51 @@
+<head>
+  <title>HyfBay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:400,800"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header>
+    <h1>The Tiny Store of Useless Things</h1>
+    <nav>
+      <ul id="navPanel">
+        <li><a href="">Useless Shop</a></li>
+        <li><a href="">Useless Info</a></li>
+        <li><a href="">Useless Contact</a></li>
+      </ul>
+    </nav>
+    <div class="submenu">
+      
+      <div id="searchPanel"><p>Search by:</p></div>
+      <div id="sortPanel">
+        <label for="sorting">Sort by:</label>
+        <select name="sorting" id="sorting">
+          <option value="">Select</option>
+          <option value="byName">By Name</option>
+          <option value="byPrice">By Price (low to high)</option>
+          <option value="byRating">By Rating (high to low)</option>
+        </select>
+      </div>
+    </div>
+  </header>
+  <main>
+    <h2>Useless Products</h2>
+    <ul id="productList"></ul>
+  </main>
+  <footer>
+    <div id="footer-info">
+      <h3>Useless Info</h3>
+      <p>Never underestimate useless products!</p>
+    </div>
+    <div id="footer-contact">
+      <h3>Useless Contact</h3>
+      <p>Never underestimate useless products!</p>
+    </div>
+  </footer>
+
+  <script src="hyfBayHelpers.js"></script>
+  <script src="main.js"></script>
+</body>
