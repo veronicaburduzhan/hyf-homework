@@ -34,12 +34,10 @@ function renderProducts(products) {
 renderProducts(products);
 
 //searching by product name
-searchProduct.addEventListener(`input`, function (event) {
+searchProduct.addEventListener("input", function (event) {
   const inputProductName = event.target.value;
   const filteredProductByName = products.filter((product) => {
-    return product.name
-      .toLowerCase()
-      .indexOf(inputProductName.toLowerCase() != -1);
+    return product.name.toLowerCase().includes(inputProductName.toLowerCase());
   });
   productsList.innerHTML = " ";
   renderProducts(filteredProductByName);
@@ -85,7 +83,6 @@ function sortProductByRating(arr) {
   productsList.innerHTML = " ";
   return renderProducts(arr);
 }
-
 console.log(sortProductByRating(products));
 
 const sortingDropdown = document.getElementById("sorting");
@@ -96,10 +93,17 @@ sortingDropdown.onchange = function (event) {
   } else if ((optionChosen == "byPrice")) {
     sortProductByPrice(products);
   } else if ((optionChosen == "byRating")) {
-    sortProductByRating(products);
-  }
-};
+
+    if ((optionChosen === "byName")) {
+      sortProductByName(products);
+    } else if ((optionChosen === "byPrice")) {
+      sortProductByPrice(products);
+    } else if ((optionChosen === "byRating")) {
+
+      sortProductByRating(products);
+    }
+  };
 
 /*I checked the console and all of the function works properly but, unfortunately, none of them affect on the product list.
 I've tried a bunch of methods and solutions but it just doesn't work. Please, check it and suggest any solution.
-P.S. I assume there is a small mistake I've made that ruins everything :)*/
+P.S. I assume there is a small mistake I've made that ruins everything */ }
