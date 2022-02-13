@@ -34,11 +34,12 @@ function renderProducts(products) {
 renderProducts(products);
 
 //searching by product name
-searchProduct.addEventListener(`input`, function (event) {
+searchProduct.addEventListener("input", function (event) {
   const inputProductName = event.target.value;
-  const filteredProductByName = products.filter((product) =>
-    product.name.toLowerCase().indexOf(inputProductName.toLowerCase() != -1)
-  );
+  const filteredProductByName = products.filter((product) => {
+    return product.name.toLowerCase().includes(inputProductName.toLowerCase());
+  });
+  productsList.innerHTML = " ";
   renderProducts(filteredProductByName);
 });
 
@@ -46,8 +47,9 @@ searchProduct.addEventListener(`input`, function (event) {
 searchPrice.addEventListener("input", function (event) {
   const inputProductPrice = event.target.value;
   const filteredProductByPrice = products.filter(function (product) {
-    return product.price <= parseInt(inputProductPrice);
+    return product.price <= inputProductPrice;
   });
+  productsList.innerHTML = " ";
   renderProducts(filteredProductByPrice);
 });
 
@@ -62,29 +64,35 @@ function sortProductByName(arr) {
     }
     return 0;
   });
+  productsList.innerHTML = " ";
   return renderProducts(arr);
 }
 
 function sortProductByPrice(arr) {
-  arr.sort((a, b) => a.price - b.price);
+  arr.sort(function (a, b) {
+    return a.price - b.price;
+  });
+  productsList.innerHTML = " ";
   return renderProducts(arr);
 }
 
 function sortProductByRating(arr) {
-  arr.sort((a, b) => b.rating - a.rating);
+  arr.sort(function (a, b) {
+    return b.rating - a.rating;
+  });
+  productsList.innerHTML = " ";
   return renderProducts(arr);
 }
-
 console.log(sortProductByRating(products));
 
 const sortingDropdown = document.getElementById("sorting");
 sortingDropdown.onchange = function (event) {
   let optionChosen = sortingDropdown.value;
-  if ((optionChosen = "byName")) {
+  if ((optionChosen === "byName")) {
     sortProductByName(products);
-  } else if ((optionChosen = "byPrice")) {
+  } else if ((optionChosen === "byPrice")) {
     sortProductByPrice(products);
-  } else if ((optionChosen = "byRating")) {
+  } else if ((optionChosen === "byRating")) {
     sortProductByRating(products);
   }
 };

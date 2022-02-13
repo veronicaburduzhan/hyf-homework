@@ -1,0 +1,9 @@
+[
+  {
+    "name": "orderOne",
+    "id": 12345,
+    "price": 24,
+    "list_of_drinks": ["cola", "vodka", "water"],
+    "order_extras": ["cheese", "pepper", "meat"]
+  }
+]
