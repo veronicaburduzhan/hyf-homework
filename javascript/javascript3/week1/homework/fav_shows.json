@@ -1,0 +1,37 @@
+[
+  {
+    "favorite_shows": {
+      "1": {
+        "title": "Dark",
+        "year_of_release": 2017,
+        "director": "Baran bo Odar",
+        "gender": ["science fiction", "thriller", "mystery", "tragedy"],
+        "country_of_origin": "Germany",
+        "seasons": 3,
+        "episods": 26,
+        "tagline": null
+      },
+      "2": {
+        "title": "Behind Her Eyes",
+        "year_of_release": 2021,
+        "director": "Erik Richter Strand",
+        "gender": ["psychological thriller", "supernatural fiction"],
+        "country_of_origin": "United Kingdom",
+        "seasons": 1,
+        "episods": 6,
+        "tagline": null
+      },
+      "3": {
+        "title": "Clickbait",
+        "year_of_release": 2021,
+        "director": "Tony Ayres",
+        "gender": ["thriller", "drama"],
+        "country_of_origin": ["United States", "Australia"],
+        "seasons": 1,
+        "episods": 8,
+        "tagline": "Father. Husband. Brother. Liar?"
+      }
+    }
+  }
+]
+
