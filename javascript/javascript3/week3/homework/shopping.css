@@ -1,0 +1,64 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 40px 70px;
+}
+
+p {
+  color: #0f0e0e;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+header {
+  margin-bottom: 30px;
+  color: #151d3b;
+}
+
+#userCart {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+main {
+  width: 50%;
+}
+
+.shopping-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid darkgrey;
+}
+
+.shopping-list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.shopping-list li p {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.total-amount-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #ad8b73;
+}
+
+.total-amount-field p {
+  font-weight: 700;
+  font-size: 22px;
+  color: #ad8b73;
+}
