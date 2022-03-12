@@ -19,7 +19,7 @@ FROM
   task 
   JOIN status ON task.status_id = status.id 
 WHERE 
-  status.name LIKE "%done%";
+  status.name = "done";
 
 -- Find all the tasks that are not marked as done
 SELECT 
@@ -28,7 +28,7 @@ FROM
   task 
   JOIN status ON task.status_id = status.id 
 WHERE 
-  NOT status.name LIKE "%done%";
+  NOT status.name = "done";
 
 -- Get all the tasks, sorted with the most recently created first
 SELECT 
@@ -39,19 +39,23 @@ ORDER BY
   created DESC;
 
 -- Get the single most recently created task
-SELECT 
-  MAX(created) 
-FROM 
-  task;
+SELECT
+*
+FROM
+task
+ORDER BY created DESC
+LIMIT 1;
 
 -- Get the title and due date of all tasks where the title or description contains database
 SELECT 
   title, 
+  description,
   due_date 
 FROM 
   task 
 WHERE 
-  title LIKE '%database%';
+  title LIKE '%database%' 
+  OR description LIKE '%database%';
 
 -- Get the title and status (as text) of all tasks
 SELECT 
@@ -63,7 +67,7 @@ FROM
 
 -- Get the name of each status, along with a count of how many tasks have that status
 SELECT 
-  COUNT(task.title), 
+  COUNT(task.title) AS COUNT, 
   status.name 
 FROM 
   task 
