@@ -23,30 +23,22 @@ class Circle {
     this.eAngle = eAngle;
     this.color = color;
   }
-  draw() {
-    circle.beginPath();
-    circle.arc(this.x, this.y, this.r, this.sAngle, this.eAngle);
-    circle.fillStyle = this.color;
-    circle.fill();
+  draw(newCircle) {
+    newCircle.beginPath();
+    newCircle.arc(this.x, this.y, this.r, this.sAngle, this.eAngle);
+    newCircle.fillStyle = this.color;
+    newCircle.fill();
   }
 }
 
 const c1 = new Circle(50, 50, 20, 0, 2 * Math.PI, "#000000");
-c1.draw();
+c1.draw(circle);
 const c2 = new Circle(100, 300, 35, 0, 2 * Math.PI, "#000000");
-c2.draw();
+c2.draw(circle);
 
 // 3. Random values for circles
-function randomX() {
-  return Math.floor(Math.random() * window.innerWidth);
-}
-
-function randomY() {
-  return Math.floor(Math.random() * window.innerHeight);
-}
-
-function randomR() {
-  return Math.floor(Math.random() * 150);
+function random(max) {
+  return Math.floor(Math.random() * max);
 }
 
 function randomColor() {
@@ -56,14 +48,14 @@ function randomColor() {
 
 const circlesInterval = setInterval(() => {
   const c3 = new Circle(
-    randomX(),
-    randomY(),
-    randomR(),
+    random(innerWidth),
+    random(innerHeight),
+    random(150),
     0,
     2 * Math.PI,
     randomColor()
   );
-  c3.draw();
+  c3.draw(circle);
 }, 100);
 
 function stopInterval(myInterval, timeout) {

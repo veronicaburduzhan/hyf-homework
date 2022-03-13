@@ -6,8 +6,6 @@ class Product {
 
   convertToCurrency(currency) {
     // converts price from EUR to chosen currency
-    const basicPrice = this.price;
-    const productName = this.name;
     (async function () {
       try {
         const response = await fetch(
@@ -19,7 +17,7 @@ class Product {
         rates.map((element) => {
           if (currency.toUpperCase().includes(element[0])) {
             console.log(
-              `${productName}: ${Math.floor(basicPrice * element[1])} ${
+              `${this.name}: ${Math.floor(this.price * element[1])} ${
                 element[0]
               }`
             );
@@ -86,8 +84,8 @@ class ShoppingCart {
         const response = await fetch(
           `https://jsonplaceholder.typicode.com/users/${user}`
         );
-        const content = await response.json();
         if (response.ok) {
+          const content = await response.json();
           const userCart = document.getElementById("userCart");
           userCart.innerHTML = `Hi, ${content.name}!`;
           shoppingCart.renderProducts();
