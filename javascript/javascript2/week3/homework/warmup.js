@@ -40,7 +40,7 @@ const saturnLogger = () => {
 };
 
 function planetLogFunction(callback) {
-  callback(planetLogFunction);
+  callback();
 }
 
 planetLogFunction(earthLogger);
@@ -84,7 +84,7 @@ function initMap() {
 // 7. Function with 2 parameters: delay and callback
 function runAfterDelay(delay, callback) {
   setTimeout(() => {
-    callback(runAfterDelay);
+    callback();
   }, delay * 1000);
 }
 
