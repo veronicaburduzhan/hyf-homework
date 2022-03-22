@@ -1,0 +1,31 @@
+show dbs;
+use test;
+db;
+  db.users.insertOne({ name: "Kyle" }); // Insert into users(name) values ("Kyle")
+  db.users.insertOne({ name: "Victor", dateofbirth : new Date("1997-01-01") }); // Insert into users(name) values ("Kyle")
+  db.users.insertOne({ name: "Joe", age : 21 });  // Insert into users(name, age) values ("Kyle", 21)
+  db.users.insertOne({ name: "Bob", age : 1 , dateofbirth : new Date("1999-12-17"), city : "Aarhus"}); // Insert into users(name, age, city) values ("Kyle", 21, "Aarhus")
+  db.users.insertMany([{ name: "Alex", age : 50, Country: "USA" }, { name: "Robbert", hobbies : ["running"]}])
+db.users.find();
+
+// SELECT * FROM Users WHERE Name = 'Bob'
+  db.users.find({name: "Bob"});
+  // SELECT * FROM Users WHERE Age <= 21
+  db.users.find({"age": {$lte: 21}});
+  // SELECT * FROM Users WHERE age >= 21
+  db.users.find({"age": {$gte: 21}});
+  // SELECT * FROM Users WHERE age >= 21 AND age <= 40 
+  db.users.find({$and:[{"age": {$gte: 21}}, {"age": {$lte: 40}}]});
+  // SELECT * FROM Users WHERE age >= 21 AND age <= 40 AND name = 'Joe'
+  db.users.find({$and:[{"age": {$gte: 21}}, {"age": {$lte: 40}}, {"name":"Joe"}]});
+// SELECT * FROM Users WHERE age >= 21 OR name = 'Joe'
+  db.users.find({$or:[{"age": {$gte: 21}}, {"name":"Joe"}]});
+//SELECT Name, Age FROM Users WHERE Name = 'Kyle'
+  db.users.find({name:'Kyle'}, {name: 1, age: 1, _id: 0});
+// UPDATE Users SET age = 23 WHERE name = "Bob" and age = 1
+db.users.updateOne({$and: [{name:'Bob'}, {age: 1}]}, {$set: {age: 23}});
+db.users.find({name:'Bob'});
+// DELETE FROM Users WHERE name = 'Bob' 
+db.users.deleteOne({name:"Bob"});
+
+db.users.find();
