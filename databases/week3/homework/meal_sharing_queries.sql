@@ -65,7 +65,8 @@ WHERE
 UPDATE 
   reservation 
 SET 
-  number_of_guests = 3 
+  number_of_guests = 3
+  contact_phonenumber = '56789043'
 WHERE 
   id = 7;
 -- Delete a reservation with any id, fx 1
@@ -155,7 +156,7 @@ SELECT
 FROM 
   meal 
 LIMIT 
-  2;
+  5;
 -- Get the meals that have good reviews
 SELECT 
   meal.id AS 'Id', 
