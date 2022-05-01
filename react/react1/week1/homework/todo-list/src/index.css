@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #383838;
+    background-color: #F2F2F2;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #066163;
+  letter-spacing: 0.1rem;
+}
+
+.todoHeader {
+  text-transform: uppercase;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+li {
+  margin-bottom: .5rem;
+  padding: .3rem;
+  font-weight: 600;
+}
+
+.dateStyle {
+  color: #CDBE78;
+   font-weight: 400;
+}
