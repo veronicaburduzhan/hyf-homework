@@ -1,5 +1,7 @@
 potato
 carrot
-cabbage
+lettuce 
 cucumber
 beetroot
+onion
+ginger
