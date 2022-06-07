@@ -128,3 +128,6 @@ VALUES
     3, 5, '2022-04-02'
   ), 
   ('Good', NULL, 2, 4, '2022-04-01');
+
+
+-- Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`heroku_f9d62cfeb6c8349`.`reservation`, CONSTRAINT `fk_meal` FOREIGN KEY (`meal_id`) REFERENCES `meal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
