@@ -1,7 +1,13 @@
 potato
 carrot
+<<<<<<< HEAD
 lettuce 
 cucumber
 beetroot
 onion
 ginger
+=======
+garlic
+cucumber
+beetroot
+>>>>>>> 04203b59682dd9acac3dc2b10db247a7452bb982
