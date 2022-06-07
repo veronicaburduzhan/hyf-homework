@@ -1,5 +1,5 @@
 potato
 carrot
-cabbage
+garlic
 cucumber
 beetroot
