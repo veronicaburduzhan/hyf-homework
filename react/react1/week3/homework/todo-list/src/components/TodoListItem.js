@@ -70,7 +70,6 @@ export default function TodoListItem({
             Edit
           </button>
         )}
-
         <button
           className="buttonStyle buttonDeleteStyle"
           onClick={handleDelete}

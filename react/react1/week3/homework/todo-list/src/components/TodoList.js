@@ -36,20 +36,15 @@ export default function TodoList({ fetchUrl }) {
     };
   }
 
-
-  //I have a problem with updating value (toDoList). My handleUpdate function gets a description from the input but we can only see the result of updating in console and not in the rendered list
-  const handleUpdate = (id, description) => {
+  const handleUpdate = (id, newDescription) => {
     const updatedTodoList = [...todoList].map((todo) => {
       if (todo.id === id) {
-        todo.description = description;
-        return { ...todo, description }
-      } else {
-        return todo;
+        todo.description = newDescription;
       }
+      return todo;
     });
     setTodoList(updatedTodoList);
-    console.log(description); //there is an actual updated description in console 
-  }
+  };
 
   const deleteTodo = (id) => {
     setTodoList((todoList) => todoList.filter((todo) => todo.id !== id));
@@ -87,4 +82,4 @@ export default function TodoList({ fetchUrl }) {
 TodoListItem.propTypes = {
   handleUpdate: PropTypes.func,
   description: PropTypes.string,
-}
+};
